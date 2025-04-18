@@ -1,0 +1,3 @@
+Apr 18 12:00:01 localhost CRON[12345]: (root) CMD (something failed)
+Apr 18 12:00:02 localhost systemd[1]: error loading module
+Apr 18 12:00:03 localhost kernel: critical memory leak detected
