@@ -8,9 +8,6 @@ A Linux-based automation system built using modular shell scripts that scans log
 
 ALMS/ ├── logs/ │ └── sample_syslog.log # Sample log file for testing ├── scripts/ │ ├── main.sh # Main controller script │ ├── monitor_logs.sh # Parses logs for keywords │ ├── alert_email.sh # Simulates sending email alerts │ └── utils.sh # Logging and utilities ├── test/ │ └── test_monitor_logs.bats # Unit test using BATS ├── docs/ │ └── Software_Architecture_Document.pdf # Design documentation ├── run.sh # Entry point to run the system ├── README.md # This guide └── changelog.md # Git version tracking
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -23,64 +20,38 @@ sudo apt update
 sudo apt install git bash grep bats
 🚀 Getting Started
 1. Clone the Project
-bash
-Copy
-Edit
 git clone https://github.com/yourusername/ALMS.git
 cd ALMS
 Or manually download and extract the ZIP file.
 
 2. Make Scripts Executable
-bash
-Copy
-Edit
 chmod +x run.sh scripts/*.sh
 3. Run the System
-bash
-Copy
-Edit
 ./run.sh
 Expected output:
 
 lua
-Copy
-Edit
-[INFO] 2025-04-18 10:30:00 - Starting WSL Log Monitoring on /home/user/ALMS/logs/sample_syslog.log...
+Copy[INFO] 2025-04-18 10:30:00 - Starting WSL Log Monitoring on /home/user/ALMS/logs/sample_syslog.log...
 [INFO] ... Alert triggered: Apr 18 ... error loading module
 [ALERT EMAIL] Apr 18 ... error loading module
 🧪 Unit Testing
 Install BATS if not already available:
 
-bash
-Copy
-Edit
 sudo apt install bats
 Run tests:
 
-bash
-Copy
-Edit
 cd test
 bats test_monitor_logs.bats
 🕒 Crontab Automation (Optional)
 To automate execution every 10 minutes:
 
-bash
-Copy
-Edit
 crontab -e
 Add the following line (update path as per your user):
 
-bash
-Copy
-Edit
 */10 * * * * /home/<your-username>/ALMS/run.sh >> /home/<your-username>/ALMS/logs/cron_output.log 2>&1
 📊 Performance Tools
 Monitor performance using:
 
-bash
-Copy
-Edit
 time ./run.sh        # Measure execution time
 top                  # Monitor CPU/Memory
 vmstat               # System stats
@@ -95,17 +66,11 @@ High Cohesion	Functions are focused and related
 Low Coupling	Scripts interact through well-defined interfaces only
 🛠️ Git & Version Control
 Initialize repository:
-bash
-Copy
-Edit
 git init
 git add .
 git commit -m "Initial commit"
 git tag v1.0
 Branching workflow:
-bash
-Copy
-Edit
 git checkout -b feature/alert-enhancement
 # Make changes
 git commit -am "Updated alert format"
@@ -117,9 +82,7 @@ Track versions in changelog.md.
 Located in logs/sample_syslog.log, contains entries like:
 
 less
-Copy
-Edit
-Apr 18 12:00:01 localhost CRON[12345]: something failed
+CopyApr 18 12:00:01 localhost CRON[12345]: something failed
 Apr 18 12:00:02 localhost systemd[1]: error loading module
 Apr 18 12:00:03 localhost kernel: critical memory leak
 ❗ Troubleshooting
@@ -153,9 +116,6 @@ README.md – This guide
 Author: Your Name
 License: MIT
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -173,9 +133,7 @@ write a complete readme file to render on github
 ChatGPT said:
 Absolutely! Below is a GitHub-renderable README.md file for your Automated Log Monitoring System (ALMS) project. It's fully formatted with proper headings, lists, code blocks, and badges to enhance visibility on GitHub.
 
-markdown
-Copy
-Edit
+
 # 🧠 Automated Log Monitoring System (ALMS)
 
 [![Bash](https://img.shields.io/badge/Shell-Bash-blue.svg)](https://www.gnu.org/software/bash/)
@@ -189,9 +147,6 @@ A modular and automated log monitoring system for Linux environments (tested in 
 
 ALMS/ ├── logs/ │ └── sample_syslog.log # Sample log file ├── scripts/ │ ├── main.sh # Main controller script │ ├── monitor_logs.sh # Parses logs for critical patterns │ ├── alert_email.sh # Simulates sending email alerts │ └── utils.sh # Logging and utility functions ├── test/ │ └── test_monitor_logs.bats # Unit test using BATS ├── docs/ │ └── Software_Architecture_Document.pdf # Design documentation ├── run.sh # Entry point to execute all scripts ├── changelog.md # Git change history └── README.md # This file
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -204,48 +159,28 @@ sudo apt update
 sudo apt install git bash grep bats
 🚀 Getting Started
 1. Clone the Repository
-bash
-Copy
-Edit
 git clone https://github.com/yourusername/ALMS.git
 cd ALMS
 2. Make Scripts Executable
-bash
-Copy
-Edit
 chmod +x run.sh scripts/*.sh
 3. Run the Monitoring System
-bash
-Copy
-Edit
 ./run.sh
 Expected Output:
 
 csharp
-Copy
-Edit
-[INFO] Starting WSL Log Monitoring on /home/user/ALMS/logs/sample_syslog.log...
+Copy[INFO] Starting WSL Log Monitoring on /home/user/ALMS/logs/sample_syslog.log...
 [ALERT EMAIL] Apr 18 ... error loading module
 🧪 Unit Testing
 Install and use bats for testing:
 
-bash
-Copy
-Edit
 cd test
 bats test_monitor_logs.bats
 🕒 Cron Job Automation (Optional)
 To run the system every 10 minutes:
 
-bash
-Copy
-Edit
 crontab -e
 Add:
 
-bash
-Copy
-Edit
 */10 * * * * /home/<your-username>/ALMS/run.sh >> /home/<your-username>/ALMS/logs/cron_output.log 2>&1
 🧠 Design Principles Used
 
@@ -258,9 +193,6 @@ Low Coupling	Scripts interact only via defined interfaces
 📊 Performance Testing
 You can evaluate performance using:
 
-bash
-Copy
-Edit
 time ./run.sh         # Execution time
 top                   # CPU/memory
 vmstat                # Virtual memory stats
@@ -269,23 +201,15 @@ iostat                # Disk I/O usage
 Located in logs/sample_syslog.log, containing entries like:
 
 lua
-Copy
-Edit
-Apr 18 12:00:02 localhost systemd[1]: error loading module
+CopyApr 18 12:00:02 localhost systemd[1]: error loading module
 Apr 18 12:00:03 localhost kernel: critical memory leak
 🛠️ Git & Version Control Strategy
 Initialize repository
-bash
-Copy
-Edit
 git init
 git add .
 git commit -m "Initial commit"
 git tag v1.0
 Use branches
-bash
-Copy
-Edit
 git checkout -b feature/improve-logging
 # Make changes, commit
 git checkout main
@@ -328,9 +252,6 @@ Email: you@example.com
 📜 License
 This project is licensed under the MIT License – see the LICENSE file for details.
 
-yaml
-Copy
-Edit
 
 ---
 
